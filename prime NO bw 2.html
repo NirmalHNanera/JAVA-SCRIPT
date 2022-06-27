@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>PRIME NOs between tWo NOs</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		n1=prompt("Enter Number--1");
+		n2=prompt("Enter Number--2");
+		document.write("PRIME NUMBERS BETWEEN ",+n1," and "+n2 ,"=")
+		for(i=n1;i<=n2;i++)
+		{
+		flag=0;
+		for(j=2;j<=i/2;j++)
+		{
+
+			if(i%j==0)
+			{
+				flag++;
+				break;
+			}
+		}
+		if(flag==0)
+		{
+			document.write("&nbsp&nbsp"+i);
+		}
+		
+
+		}
+		
+	</script>
+
+</body>
+</html>
