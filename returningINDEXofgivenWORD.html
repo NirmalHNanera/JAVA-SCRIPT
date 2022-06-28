@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+	str1=prompt("Enter String");
+	word=prompt("Enter Word");
+	str1 = str1.toLowerCase();
+	word = word.toLowerCase();
+	let text=str1;
+	const myArray = text.split(" ");
+	i=0;
+	for(i=0;i<myArray.length;i++)
+	{
+		if(myArray[i].localeCompare(word)==0)
+		{
+			document.write("INDEX OF GIVEN WORD::"+i);
+		}
+
+	}
+
+
+	</script>
+	
+
+
+</body>
+</html>
