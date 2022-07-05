@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>Enter NUMBER 1 </td>
+			<td>:</td>
+			<td><input type="text" id="TEXT_PAR_1"></td>
+		</tr>
+		<tr>
+			<td>Enter NUMBER 2 </td>
+			<td>:</td>
+			<td><input type="text" id="TEXT_PAR_2"></td>
+		</tr>
+		<tr>
+			<td colspan="3" align="center">
+				<input type="button" value="+" onclick="ADDTION()">
+				<input type="button" value="-" onclick="SUBSTRACTION()">
+				<input type="button" value="*" onclick="MULTIPLICATION()">
+				<input type="button" value="/" onclick="DIVISION()">
+				<input type="button" value="%" onclick="MODULUS()">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3"><h1 id="ans"></h1></td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		function ADDTION(){
+			var n1 = document.getElementById("TEXT_PAR_1");
+			var n2 = document.getElementById("TEXT_PAR_2");
+			var ansH1 = document.getElementById("ans");
+
+			add = parseInt(n1.value) + parseInt(n2.value);
+
+			ansH1.innerHTML = add;
+		}
+		function SUBSTRACTION(){
+			var n1 = document.getElementById("TEXT_PAR_1");
+			var n2 = document.getElementById("TEXT_PAR_2");
+			var ansH1 = document.getElementById("ans");
+
+			sub = parseInt(n1.value) - parseInt(n2.value);
+
+			ansH1.innerHTML = sub;
+		}
+		function MULTIPLICATION(){
+			var n1 = document.getElementById("TEXT_PAR_1");
+			var n2 = document.getElementById("TEXT_PAR_2");
+			var ansH1 = document.getElementById("ans");
+
+			mult = parseInt(n1.value) * parseInt(n2.value);
+
+			ansH1.innerHTML = mult;
+		}
+		function DIVISION(){
+			var n1 = document.getElementById("TEXT_PAR_1");
+			var n2 = document.getElementById("TEXT_PAR_2");
+			var ansH1 = document.getElementById("ans");
+
+			div = parseInt(n1.value) / parseInt(n2.value);
+
+			ansH1.innerHTML = div;
+		}
+		function MODULUS()
+		{
+			var n1 = document.getElementById("TEXT_PAR_1");
+			var n2 = document.getElementById("TEXT_PAR_2");
+			var ansH1 = document.getElementById("ans");
+
+			mod = parseInt(n1.value) % parseInt(n2.value);
+
+			ansH1.innerHTML = mod;
+		}
+		
+
+		document.write(ansH1.innerHTML)
+	</script>
+
+</body>
+</html>

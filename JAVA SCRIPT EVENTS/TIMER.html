@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>STOP WATCH</title>
+</head>
+<body>
+	<input type="button" value="start_timer" onclick="START_TIMER()">
+	<input type="button" value="stop_timer" onclick="STOP_TIMER()">
+	<input type="button" value="reset_timer" onclick="RESET_TIME()">
+	<h1 id="start">STOP WATCH </h1>
+	<h1 id="counter">TIME</h1>
+	<script type="text/javascript">
+		
+		var a =0;
+		var c;
+		function START_TIMER(){
+			c = setInterval(print_time,10)
+		}
+		function print_time(){
+			a++;
+			
+			var temp = document.getElementById("counter");
+			temp.innerHTML=a/100;
+		}
+
+		function STOP_TIMER(){
+			clearInterval(c);
+		}
+		function RESET_TIME(){
+			STOP_TIMER();
+			a=0;
+			var temp = document.getElementById("counter");
+			temp.innerHTML="0";
+		}
+	</script>
+</body>
+</html>
