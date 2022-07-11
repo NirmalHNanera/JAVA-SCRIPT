@@ -3,8 +3,21 @@
 <head>
 	<meta charset="utf-8">
 	<title>STOP WATCH</title>
+	<style type="text/css">
+		#img{
+			display: none;
+			width: 100%;
+			height: 100vh;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 9;
+		}
+	</style>
 </head>
 <body>
+	<img src="TIME.gif" id="img" onclick="RESET_TIME()">
+	<input type="text" id="inputno" placeholder="Enter no." >
 	<input type="button" value="start_timer" onclick="START_TIMER()">
 	<input type="button" value="stop_timer" onclick="STOP_TIMER()">
 	<input type="button" value="reset_timer" onclick="RESET_TIME()">
@@ -18,10 +31,17 @@
 			c = setInterval(print_time,10)
 		}
 		function print_time(){
+			var input = parseInt(document.getElementById('inputno').value);
 			a++;
 			
 			var temp = document.getElementById("counter");
 			temp.innerHTML=a/100;
+
+			if (temp.innerHTML == input) {
+
+				document.getElementById('img').style.display = "block";
+
+			}
 		}
 
 		function STOP_TIMER(){
@@ -32,6 +52,10 @@
 			a=0;
 			var temp = document.getElementById("counter");
 			temp.innerHTML="0";
+
+			document.getElementById('inputno').value = "";
+			document.getElementById('img').style.display = "none";
+
 		}
 	</script>
 </body>
