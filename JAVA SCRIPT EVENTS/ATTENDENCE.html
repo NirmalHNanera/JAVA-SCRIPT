@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATTENDENCE</title>
+    <style>
+        #container{
+            border: 5px solid red;
+            width: 70%;
+            min-height: 50vh;
+            float: right;
+            top: 25vh;
+            right: 5vh;
+            position: fixed;
+
+
+            display: flex;
+
+        }
+        #container div{
+            border:3px solid black;
+            width: 100%;
+            padding: 15px;
+            position: relative;
+        }
+
+
+        #chkAll{
+            background-color: green;
+            height: 50px;
+            width: 20%;
+            top: 15vh;
+            right: 25vh;
+            position: fixed;
+        }
+        #unchkAll{
+            background-color: red;
+            height: 50px;
+            width: 20%;
+            top: 15vh;
+            right: 10vh;
+            position: fixed;
+            }
+         #att{
+           margin-left: 450px;
+           margin-top: 150px;
+           position: fixed;
+           text-align: center;
+           background-color: blue;
+           text-size-adjust: 100px
+         }
+        }
+    </style>
+</head>
+<body>
+  <h1 id="att">ATTENDENCE</h1>
+    <button id = "chkAll" onclick="checkAll()">SELECTAll</button>
+    <button id = "unchkAll" onclick="uncheckAll()">UN-SELECTAll</button><br>
+
+    <div id="container">
+       <div>
+            <h1>A</h1>
+            <p id="container1"></p>
+        </div>
+        <div>
+            <h1>B</h1>
+            <p id="container2"></p>
+        </div>
+        <div>
+            <h1>C</h1>
+            <p id="container3"></p>
+        </div>
+   </div>
+
+   <script>
+        function createElement1(start, end){
+            for(i=start;i<=end;i++){
+                document.write("<input type='checkbox' name='A' value='"+i+"' onclick='check_Ab()'>");
+                document.write(i+"<br>");
+            }
+        }
+        function createElement2(start, end){
+            for(i=start;i<=end;i++){
+                document.write("<input type='checkbox' name='B' value='"+i+"' onclick='check_Ab()'>");
+                document.write(i+"<br>");
+            }
+        }
+        function createElement3(start, end){
+            for(i=start;i<=end;i++){
+                document.write("<input type='checkbox' name='C' value='"+i+"' onclick='check_Ab()'>");
+                document.write(i+"<br>");
+            }
+        }
+        createElement1(101,164);
+        createElement2(201,285);
+        createElement3(301,364);
+
+        function checkAll(){
+            var ck = document.getElementsByTagName("input");
+
+            for(i=0;i<ck.length;i++){
+                ck[i].checked = true;
+            }
+
+            document.getElementById("container1").innerHTML = "";
+            document.getElementById("container2").innerHTML = "";
+            document.getElementById("container3").innerHTML = "";
+        }
+
+        function uncheckAll(){
+            var ck = document.getElementsByTagName("input");
+            for(i=0;i<ck.length;i++){
+                ck[i].checked = false;
+            }
+
+            check_Ab();
+        }
+
+        function check_Ab(){
+            unck = document.getElementsByTagName("input");
+
+            var temp1="";
+            var temp2="";
+            var temp3="";
+
+            class_A = document.getElementById('container1');
+            class_B = document.getElementById('container2');
+            class_C = document.getElementById('container3');
+
+            for(i=0;i<unck.length;i++){
+                if(unck[i].checked == false){
+                    if( unck[i].name == 'A'){
+                        temp1 += unck[i].value + ', '; 
+                    }
+                    else if( unck[i].name == 'B'){
+                        temp2 += unck[i].value + ', '; 
+                    }
+                    else if( unck[i].name == 'C'){
+                        temp3 += unck[i].value + ', '; 
+                    }
+                    class_A.innerHTML = temp1.substring(0,temp1.length - 2);
+                    class_B.innerHTML = temp2.substring(0,temp2.length - 2);
+                    class_C.innerHTML = temp3.substring(0,temp3.length - 2);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
