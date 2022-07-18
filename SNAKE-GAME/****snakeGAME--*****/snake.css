@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+.container-fluid{
+    background: url("./SnakeGameImages/backgroundjpg.jpg"); 
+    min-height: 100vh;
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+
+#board{
+    background: linear-gradient(green,lightgreen,darkgreen);
+    width: 60%;
+    height: 92vmin;
+    margin-right: 300px;
+    border: 3px solid black;
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows: repeat(30, 1fr);
+    grid-template-columns: repeat(30, 1fr);
+}
+
+#scoreBox{
+    position: absolute;
+    top: 9px;
+    right: 200px;
+    font-size: 39px;
+    font-weight: bold;
+    font-family: 'New Tegomin', serif;
+}
+
+#highScoreBox{
+    position: absolute;
+    top: 59px;
+    right: 140px;
+    font-size: 39px;
+    font-weight: bold;
+    font-family: 'New Tegomin', serif;
+}
+
+.head{
+    background: linear-gradient(green, red,yellow);
+    border: 0.25px solid rgb(4, 9, 255);
+    border-radius: 15px;
+}
+
+.snake{
+    background: linear-gradient(green,red,brown);
+    border: 0.25vmin solid white;
+    border-radius: 15px;
+    margin: 1.5px;
+}
+
+.food{
+    background: linear-gradient(red,darkred,brown,violet);
+    border: 0.25px solid black;
+    border-radius: 20px;
+    margin: 3px;
+}
