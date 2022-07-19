@@ -30,12 +30,12 @@
 				if(confirmpass==password){
 					 if(patternmobile.test(mobile))
 					{
-						alert("login successful");
+						alert("LOGIN SUCCESSFUL");
 						return true;
 					}
 					else
 					{
-						alert("login UNsuccessful");
+						alert("MOBILE NUMBER PATTERN IS WRONG");
 						return false;
 					}
 				}
@@ -43,14 +43,14 @@
 
 					else
 					{
-						alert("login UNsuccessful");
+						alert(" CONFIRM PASSWORD IS NOT VALID");
 						return false;
 					}
 
 			}
 			else {
 				user2.style.border = "red solid 3px";
-				alert("invalid email-id");
+				alert("INVALID EMAIL-ID");
 				return false;
 			}
 			
