@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>creating mailing system</title>
+	<style>
+		legend {
+			display: block;
+			padding-left: 2px;
+			padding-right: 2px;
+			border: black dotted 5px;
+		}
+	</style>
+	
+</head>
+
+<body bgcolor="red">
+	<script type="text/javascript">
+		function validate() {
+
+			var user = document.getElementById("e").value;
+			var user2 = document.getElementById("e");
+			var password = document.getElementById("pass").value;
+			var confirmpass = document.getElementById("confirm").value;
+			var pattern = /^\w+([\.-]?\w+)*@gmail.com$/;
+			var mobile = document.getElementById("mobile").value;
+			var patternmobile = /^[0-9]{10}/
+			if (pattern.test(user)) {
+				
+				if(confirmpass==password){
+					 if(patternmobile.test(mobile))
+					{
+						alert("login successful");
+						return true;
+					}
+					else
+					{
+						alert("login UNsuccessful");
+						return false;
+					}
+				}
+					
+
+					else
+					{
+						alert("login UNsuccessful");
+						return false;
+					}
+
+			}
+			else {
+				user2.style.border = "red solid 3px";
+				alert("invalid email-id");
+				return false;
+			}
+			
+		}
+		function showHide(){
+			var p=document.getElementById("pass");
+			var c=document.getElementById("show");
+			if(p.type=="password"){
+				p.type="text";
+				c.value="Hide";
+			}
+			else{
+				p.type="Password";
+				c.value="Show";
+			}
+		}
+	</script>
+	<center>
+		<h1 style="background-color: green; width: 400px;"> Registration form</h1>
+		<form>
+			<fieldset style="width:300px; background-color: cyan;">
+				<legend style="text-align: center;">Registation Form</legend>
+				<table>
+					<tr>
+						<input type="text"
+							placeholder="firstname"
+							maxlength="10">
+					</tr>
+					<br><br>
+					<tr>
+						<input type="text"
+							placeholder="lastname"
+							maxlength="10">
+					</tr>
+					<br><br>
+					<tr>
+						<input type="email"
+							placeholder="username@gmail.com" id="e">
+					</tr>
+					<br><br>
+					<tr>
+						<input type="password" placeholder="password" id='pass'>
+						<input type="button" value="Show" id="show" onclick="showHide()" style="background-color:brown;">
+					</tr>
+					<br><br>
+					<tr>
+						<input type="password" placeholder="confirm password" id="confirm">
+					</tr>
+					<br><br>
+					<tr>
+						<input type="number" placeholder="contact" id="mobile">
+					</tr>
+					<br><br>
+					<tr>
+						<label>Gender:</label>
+						<select id="gender">
+							<option value="male">MALE</option>
+							<option value="female">FEMALE</option>
+							<option value="others">OTHERS</option>
+						</select>
+					</tr>
+					<br><br>
+					<tr><input type="submit"
+						onclick="validate()" value="CREATE">
+					</tr>
+				</table>
+			</fieldset>
+		</form>
+	</center>
+	
+</body>
+
+</html>
